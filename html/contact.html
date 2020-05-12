@@ -128,20 +128,18 @@
             function verify(){
                 var fn,ln,mail,country,message,mailformat;
                 fn=document.getElementById("firstname").value;
-                n=document.getElementById("lastname").value;
+                ln=document.getElementById("lastname").value;
                 mail=document.getElementById("email").value;
                 country=document.getElementById("country").value;
                 message=document.getElementById("message").value;
                 var regex = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,6}\.[a-z]{2,4}$/;
-
-                var cpt=0;
                  if(fn=="" || ln=="" || country=="" || message=="" || mail=="")
                     {
                         window.alert(" all the fields must be filled");
                         cpt++;
                     }
                    
-                 if(fn!="" && ln!="" && country!="" && message!="" && mail!="")
+                 else 
                 {
                     if(!regex.test(mail))
                     {
@@ -149,21 +147,13 @@
                         window.alert(" the email is not completed");
                         cpt++;
                     }
+                    else alert("Sent");
                     
                 }
                
-               if(cpt==0)
-               {
-                window.alert("Sent");
-               }
-               else
-               {
-                window.alert(" all the fields must be filled");
-               }
-
-                   
-                
-                
+            
+            
+    
             }
         </script>
     </body>
